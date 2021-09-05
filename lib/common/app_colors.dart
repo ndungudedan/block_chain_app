@@ -25,5 +25,5 @@ const Color avatarColor3 = Color(0xffFFF0F0);
 const Color avatarColor4 = Color(0xffACFFE6);
 const Color avatarColor5 = Color(0xffE3EEFF);
 
- //Button colors
- const Color authBtnColor = Color(0xff363636);
+//Button colors
+const Color authBtnColor = Color(0xff363636);
