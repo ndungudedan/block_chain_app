@@ -26,6 +26,9 @@ dependencies:
 
   persistent_bottom_nav_bar: ^4.0.2
   cupertino_icons: ^1.0.3
+  flutter_initicon: ^2.0.0
+  dots_indicator:
+
 
 dev_dependencies:
   flutter_test:
@@ -37,15 +40,11 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/
+  
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

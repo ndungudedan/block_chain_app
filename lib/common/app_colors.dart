@@ -9,7 +9,7 @@ const Color kcSuccessColor = Color(0xff008B5E);
 // Backgroung Colors
 const Color kcBackgroundColor1 = Color(0xff010f25);
 const Color kcBackgroundColor2 = Color(0xffFFFFFF);
-const Color kInputFieldBackColor = Color(0xff031735);
+const Color kcBackgroundColor3 = Color(0xff031735);
 const Color greyColor = Color(0xff999999);
 
 // Text Colors

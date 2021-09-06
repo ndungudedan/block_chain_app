@@ -58,7 +58,7 @@ class AuthInputField extends StatelessWidget {
           maxLines: maxLines ?? 1,
           style: Theme.of(context).textTheme.bodyText1!.copyWith(color: whiteColor),
           decoration: InputDecoration(
-            fillColor: kInputFieldBackColor,
+            fillColor: kcBackgroundColor3,
             filled: true,
             suffixIcon: trailing != null
                 ? GestureDetector(
