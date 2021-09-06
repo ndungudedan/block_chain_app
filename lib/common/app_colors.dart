@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
-const Color kcPrimaryColor = Color(0xff00B87C);
+const Color kcPrimaryColor = Color(0xff24feb7);
 const Color kcSecondaryColor = Color(0xff1A61DB);
-const Color kcAccentColor = Color(0xffB8003C);
+const Color kcAccentColor = Color(0xff06323b);
 const Color kcErrorColor = Color(0xffF40101);
 const Color kcSuccessColor = Color(0xff008B5E);
 
 // Backgroung Colors
-const Color kcBackgroundColor1 = Color(0xffF6F6F6);
+const Color kcBackgroundColor1 = Color(0xff010f25);
 const Color kcBackgroundColor2 = Color(0xffFFFFFF);
+const Color kInputFieldBackColor = Color(0xff031735);
+const Color greyColor = Color(0xff999999);
 
 // Text Colors
 const Color headerColor = Color(0xff242424);
