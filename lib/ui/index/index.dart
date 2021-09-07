@@ -1,4 +1,5 @@
 import 'package:block_chain/common/app_colors.dart';
+import 'package:block_chain/common/routes.dart';
 import 'package:block_chain/ui/index/account_screen.dart';
 import 'package:block_chain/ui/index/home_screen.dart';
 import 'package:block_chain/ui/index/wallets_screen.dart';
@@ -6,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class Index extends StatelessWidget {
-PersistentTabController _controller = PersistentTabController(initialIndex: 0);
+  PersistentTabController _controller =
+      PersistentTabController(initialIndex: 0);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ PersistentTabController _controller = PersistentTabController(initialIndex: 0);
       context,
       controller: _controller,
       screens: _buildScreens(),
-      items: _navBarsItems(),
+      items: _navBarsItems(context),
       confineInSafeArea: true,
       backgroundColor: kcBackgroundColor3, // Default is Colors.white.
       handleAndroidBackButtonPress: true, // Default is true.
@@ -46,33 +48,40 @@ PersistentTabController _controller = PersistentTabController(initialIndex: 0);
   }
 
   List<Widget> _buildScreens() {
-        return [
-          HomeScreen(),
-          WalletScreen(),
-          AccountScreen()
-        ];
-    }
+    return [HomeScreen(), WalletScreen(), AccountScreen()];
+  }
 
-    List<PersistentBottomNavBarItem> _navBarsItems() {
-        return [
-            PersistentBottomNavBarItem(
-                icon: Icon(Icons.home),
-                title: ("Home"),
-                activeColorPrimary: kcPrimaryColor,
-                inactiveColorPrimary: greyColor,
-            ),
-            PersistentBottomNavBarItem(
-                icon: Icon(Icons.wallet_travel),
-                title: ("Wallets"),
-                activeColorPrimary: kcPrimaryColor,
-                inactiveColorPrimary: greyColor,
-            ),
-            PersistentBottomNavBarItem(
-                icon: Icon(Icons.account_box_rounded),
-                title: ("Account"),
-                activeColorPrimary: kcPrimaryColor,
-                inactiveColorPrimary: greyColor,
-            ),
-        ];
-    }
+  List<PersistentBottomNavBarItem> _navBarsItems(BuildContext context) {
+    return [
+      PersistentBottomNavBarItem(
+          icon: Icon(Icons.home),
+          title: ("Home"),
+          activeColorPrimary: kcPrimaryColor,
+          inactiveColorPrimary: greyColor,
+          routeAndNavigatorSettings: RouteAndNavigatorSettings(
+            onGenerateRoute: (settings) =>
+                Routes(context).generateRoutes(settings),
+          )),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.wallet_travel),
+        title: ("Wallets"),
+        activeColorPrimary: kcPrimaryColor,
+        inactiveColorPrimary: greyColor,
+        routeAndNavigatorSettings: RouteAndNavigatorSettings(
+            onGenerateRoute: (settings) =>
+                Routes(context).generateRoutes(settings),
+          )
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.account_box_rounded),
+        title: ("Account"),
+        activeColorPrimary: kcPrimaryColor,
+        inactiveColorPrimary: greyColor,
+        routeAndNavigatorSettings: RouteAndNavigatorSettings(
+            onGenerateRoute: (settings) =>
+                Routes(context).generateRoutes(settings),
+          )
+      ),
+    ];
+  }
 }

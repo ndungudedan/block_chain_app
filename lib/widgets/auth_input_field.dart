@@ -13,6 +13,7 @@ class AuthInputField extends StatelessWidget {
   final Widget? trailing;
   final TextInputType? inputType;
   final bool password;
+  final bool? enabled;
   final TextEditingController? controller;
   final TextInputType? keyboardType;
   final void Function()? onTrailingTapped;
@@ -20,6 +21,7 @@ class AuthInputField extends StatelessWidget {
 
   const AuthInputField({
     Key? key,
+    this.enabled,
     this.onSaved,
     this.filledColor = kcBackgroundColor2,
     this.hintPlaceHolder = '',
@@ -50,13 +52,17 @@ class AuthInputField extends StatelessWidget {
         verticalSpaceRegular,
 
         TextField(
+          enabled: enabled,
           onChanged: onChanged,
           keyboardType: keyboardType,
           autofocus: false,
           obscureText: password,
           textInputAction: TextInputAction.done,
           maxLines: maxLines ?? 1,
-          style: Theme.of(context).textTheme.bodyText1!.copyWith(color: whiteColor),
+          style: Theme.of(context)
+              .textTheme
+              .bodyText1!
+              .copyWith(color: whiteColor),
           decoration: InputDecoration(
             fillColor: kcBackgroundColor3,
             filled: true,
@@ -70,8 +76,14 @@ class AuthInputField extends StatelessWidget {
                 const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
             hintText: hintPlaceHolder,
             labelText: labelText,
-            labelStyle: Theme.of(context).textTheme.bodyText1!.copyWith(color: whiteColor),
-            hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(color: whiteColor),
+            labelStyle: Theme.of(context)
+                .textTheme
+                .bodyText1!
+                .copyWith(color: whiteColor),
+            hintStyle: Theme.of(context)
+                .textTheme
+                .bodyText1!
+                .copyWith(color: whiteColor),
             errorBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.red),
             ),
